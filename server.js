@@ -13,6 +13,14 @@ app.use(express.json());
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
+
+
+//API Home
+app.get('/', function (req, res) {
+    res.send(`AI Chat Backend working Now! Port is ${PORT}`);
+});
+
+
 app.post("/api/chat", async (req, res) => {
   const { message } = req.body;
 
@@ -42,4 +50,7 @@ app.post("/api/chat", async (req, res) => {
   }
 });
 
-app.listen(5000, () => console.log("✅ AI Chat Backend running on port 5000"));
+// app.listen(5000, () => console.log("✅ AI Chat Backend running on port 5000"));
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(` AI Chat Backend running on port  ${PORT}`));
