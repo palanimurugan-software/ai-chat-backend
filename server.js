@@ -51,6 +51,6 @@ app.post("/api/chat", async (req, res) => {
 });
 
 // app.listen(5000, () => console.log("✅ AI Chat Backend running on port 5000"));
-
+// npm start
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(` AI Chat Backend running on port  ${PORT}`));
+app.listen(PORT, () => console.log(` AI Chat Backend running on port  http://localhost:${PORT}`));
